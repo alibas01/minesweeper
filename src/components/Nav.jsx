@@ -4,32 +4,37 @@ import Timer from "./Timer";
 // STYLESHEETS
 import "../style/Nav.css";
 
+
 export default function Nav(props) {
+  const [show, setShow] = useState(false);
+
   return (
     <nav className="nav">
-      <div className="dropdown">
+      <div className="dropdown" onClick={() => setShow((s) => !s)} >
         <button className="dropbtn">Dropdown <i className="fas fa-caret-down"></i></button>
-        <div className="dropdown-content">
+        <div className="dropdown-content" style={{ display: show ? "block" : "none" }}>
           <a href="#">Easy</a>
           <a href="#">Medium</a>
           <a href="#">Hard</a>
         </div>
       </div>
-      <div className="measures">
         <ul className="nav-menu">
-          <li className="flag">
+          <li className="nav-menu-item">
+            <i className="far fa-clock"></i>
+            &nbsp;&nbsp;
+            <div>
+            <Timer />
+            </div>
+          </li>
+          <li className="nav-menu-item">
             <i className="fas fa-flag"></i>
+            &nbsp;&nbsp;
             <h6>number</h6>
           </li>
-          <li className="clock">
-            <i className="far fa-clock"></i>
-            <Timer />
-          </li>
-          <li className="close">
+          <li className="nav-menu-item">
             <i className="fas fa-times"></i>
           </li>
         </ul>
-      </div>
     </nav>
   );
 }
