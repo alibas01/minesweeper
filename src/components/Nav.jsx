@@ -1,36 +1,32 @@
 import React, { useState, useEffect } from "react";
-import Clock from "react-clock";
+import Timer from "./Timer";
 
 // STYLESHEETS
-import "../styles/Clock.css";
-import "../styles/nav.scss";
+import "../style/Nav.css";
 
 export default function Nav(props) {
-  const [time, setTime] = useState(new Date());
-  useEffect(() => {
-    const interval = setInterval(() => setTime(new Date()), 1000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
   return (
     <nav className="nav">
-      <section className="difficulty">
-        <h1 className="title">{props.title + " Page"}</h1>
-      </section>
+      <div className="dropdown">
+        <button className="dropbtn">Dropdown <i className="fas fa-caret-down"></i></button>
+        <div className="dropdown-content">
+          <a href="#">Easy</a>
+          <a href="#">Medium</a>
+          <a href="#">Hard</a>
+        </div>
+      </div>
       <div className="measures">
         <ul className="nav-menu">
           <li className="flag">
-            <h6>flag</h6>
+            <i className="fas fa-flag"></i>
             <h6>number</h6>
           </li>
           <li className="clock">
-          <Clock value={time} size={120} />
-            <h6>seconds</h6>
+            <i className="far fa-clock"></i>
+            <Timer />
           </li>
           <li className="close">
-            <h6>crosss</h6>
+            <i className="fas fa-times"></i>
           </li>
         </ul>
       </div>
