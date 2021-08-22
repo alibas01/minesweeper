@@ -16,7 +16,7 @@ export function prepareTable(difficulty) {
     table.push(row);
   }
   // lay the bombs
-  while (bombCount <= bombs) {
+  while (bombCount < bombs) {
     let row = Math.floor(Math.random() * size);
     let col = Math.floor(Math.random() * size);
     if (!table[row][col]) {
@@ -46,3 +46,4 @@ export function countBombs(table, row, col) {
   }
   return count;
 }
+

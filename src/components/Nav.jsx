@@ -6,18 +6,17 @@ import useConditionsData from "../hooks/useConditionsData";
 import "../style/Nav.css";
 
 
-export default function Nav() {
-  const [show, setShow] = useState(false);
-  const [ diff, setDiff ] = useState("easy");
+export default function Nav(props) {
+  const { show, setShow, difficulty, setDifficulty } = props;
 
   return (
     <nav className="nav">
       <div className="dropdown" onClick={() => setShow((s) => !s)} >
-        <button className="dropbtn">Difficulty:{diff} <i className="fas fa-caret-down"></i></button>
+        <button className="dropbtn">Difficulty:{difficulty} <i className="fas fa-caret-down"></i></button>
         <div className="dropdown-content" style={{ display: show ? "block" : "none" }}>
-          <p onClick={setDiff("easy")}>Easy</p>
-          <p onClick={setDiff("medium")}>Medium</p>
-          <p onClick={setDiff("hard")}>Hard</p>
+          <p onClick={setDifficulty("easy")}>Easy</p>
+          <p onClick={setDifficulty("medium")}>Medium</p>
+          <p onClick={setDifficulty("hard")}>Hard</p>
         </div>
       </div>
         <ul className="nav-menu">

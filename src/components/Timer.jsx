@@ -4,16 +4,16 @@ import { useState, useEffect } from 'react';
 const Timer = (props) => {
     const {initialSeconds = 0} = props;
     const [seconds, setSeconds ] =  useState(initialSeconds);
+
     useEffect(()=>{
-    let myInterval = setInterval(() => {
-        setSeconds(seconds => seconds + 1);
+      let myInterval = setInterval(() => {
+          setSeconds(seconds => seconds + 1);
+          }, 1000)
 
-        }, 1000)
-
-        return ()=> {
-            clearInterval(myInterval);
-          };
-    }, []);
+          return ()=> {
+              clearInterval(myInterval);
+            };
+      }, []);
 
     return (
         <div>
