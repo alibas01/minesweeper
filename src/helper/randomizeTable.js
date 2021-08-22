@@ -1,4 +1,4 @@
-export function preTable(difficulty) {
+export function prepareTable(difficulty) {
   let size = 0;
   let bombCount = 0;
   let bombs = 0;

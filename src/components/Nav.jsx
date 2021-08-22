@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Timer from "./Timer";
 import useConditionsData from "../hooks/useConditionsData";
 
@@ -6,18 +6,18 @@ import useConditionsData from "../hooks/useConditionsData";
 import "../style/Nav.css";
 
 
-export default function Nav(props) {
+export default function Nav() {
   const [show, setShow] = useState(false);
-  const [ difficulty, setDifficulty ] = useState("easy");
+  const [ diff, setDiff ] = useState("easy");
 
   return (
     <nav className="nav">
       <div className="dropdown" onClick={() => setShow((s) => !s)} >
-        <button className="dropbtn">Difficulty:{difficulty} <i className="fas fa-caret-down"></i></button>
+        <button className="dropbtn">Difficulty:{diff} <i className="fas fa-caret-down"></i></button>
         <div className="dropdown-content" style={{ display: show ? "block" : "none" }}>
-          <p onClick={setDifficulty("easy")}>Easy</p>
-          <p onClick={setDifficulty("medium")}>Medium</p>
-          <p onClick={setDifficulty("hard")}>Hard</p>
+          <p onClick={setDiff("easy")}>Easy</p>
+          <p onClick={setDiff("medium")}>Medium</p>
+          <p onClick={setDiff("hard")}>Hard</p>
         </div>
       </div>
         <ul className="nav-menu">

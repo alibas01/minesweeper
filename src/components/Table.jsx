@@ -1,43 +1,35 @@
 import React, { useState, useEffect } from "react";
-import { preTable, countBombs } from "../helper/randomizeTable"
-import Square from "./Square";
+import { prepareTable } from "../helper/randomizeTable"
+import Row from "./Row";
 import useConditionsData from "../hooks/useConditionsData";
 
 // STYLESHEETS
 // import "./table.css";
-//import "../styles/nav.scss";
+import "../style/Table.css";
 
-export default function Table(props) {
+export default function Table() {
   const [table, setTable] = useState([]);
-  const [view, setView] = useState("hidden");
   // const { difficulty } = useConditionsData();
   const difficulty = "easy"
 
   useEffect(() => {
-    setTable(preTable(difficulty));
+    setTable(prepareTable(difficulty));
    //when play clicks, the table is reset
   }, []);
 
-  const prepareTable = function(t) {
-    let tableWithHiddenBombs = t.map((row, rowIndex) => {
-      return row.map((v, colIndex) => {
+  const prepareT = table.map((row, rowIndex) => {
         return (
-          <Square
-            key={rowIndex + "-" + colIndex}
-            value={v}
-            onClick={setView("visible")}
-            view={view}
-            numberBombs={countBombs(t, rowIndex, colIndex)}
+          <Row
+            key={rowIndex}
+            table={table}
+            rowIndex={rowIndex}
           />
         );
       });
-    });
-    return tableWithHiddenBombs;
-  }
 
   return (
     <div className="table">
-      {prepareTable(table)}
+      {prepareT}
     </div>
   );
 }
