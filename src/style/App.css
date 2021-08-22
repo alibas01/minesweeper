@@ -1,4 +1,4 @@
-.layout-hard {
+.layout-Hard {
   text-align: center;
   border-style: ridge;
   border-width: 3px;
@@ -9,7 +9,7 @@
   height: auto;
   margin: 30px;
 }
-.layout-medium {
+.layout-Medium {
   text-align: center;
   border-style: ridge;
   border-width: 3px;
@@ -20,7 +20,7 @@
   height: auto;
   margin: 30px;
 }
-.layout-easy {
+.layout-Easy {
   text-align: center;
   border-style: ridge;
   border-width: 3px;

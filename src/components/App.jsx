@@ -14,16 +14,18 @@ function App() {
     setShow,
     flagCount,
     setFlagCount,
+    freeze,
+    setFreeze,
   } = useConditionsData();
 
   const adjustClass = function(difficulty) {
     let clas = "layout-";
-    if (difficulty === "easy") {
-      return clas + "easy";
-    } else if (difficulty === "medium") {
-      return clas + "medium";
+    if (difficulty === "Easy") {
+      return clas + "Easy";
+    } else if (difficulty === "Medium") {
+      return clas + "Medium";
     } else {
-      return clas + "hard";
+      return clas + "Hard";
     }
   }
 
@@ -35,6 +37,7 @@ function App() {
         show={show}
         setShow={setShow}
         flagCount={flagCount}
+        setFreeze={setFreeze}
       />
       <Table
         table={table}
@@ -42,6 +45,8 @@ function App() {
         difficulty={difficulty}
         flagCount={flagCount}
         setFlagCount={setFlagCount}
+        freeze={freeze}
+        setFreeze={setFreeze}
       />
     </div>
   );

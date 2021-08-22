@@ -1,28 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import Timer from "./Timer";
 
 // STYLESHEETS
 import "../style/Nav.css";
 
 export default function Nav(props) {
-  const { show, setShow, difficulty, setDifficulty, flagCount } = props;
+  const { show, setShow, difficulty, setDifficulty, flagCount, setFreeze } =
+    props;
 
-  const adjustClass = function(difficulty) {
+    //console.log(props);
+  const adjustClass = function (difficulty) {
     let clas = "nav-";
-    if (difficulty === "easy") {
-      return clas + "easy";
-    } else if (difficulty === "medium") {
-      return clas + "medium";
+    if (difficulty === "Easy") {
+      return clas + "Easy";
+    } else if (difficulty === "Medium") {
+      return clas + "Medium";
     } else {
-      return clas + "hard";
+      return clas + "Hard";
     }
-  }
+  };
 
   return (
     <nav className={adjustClass(difficulty)}>
       <div className="dropdown">
         <button className="dropbtn" onClick={() => setShow((s) => !s)}>
-          Difficulty<i className="fas fa-caret-down"></i>
+        {difficulty}<i className="fas fa-caret-down"></i>
         </button>
         <div
           className="dropdown-content"
@@ -30,7 +32,7 @@ export default function Nav(props) {
         >
           <p
             onClick={() => {
-              setDifficulty("easy");
+              setDifficulty("Easy");
               setShow((s) => !s);
             }}
           >
@@ -38,7 +40,7 @@ export default function Nav(props) {
           </p>
           <p
             onClick={() => {
-              setDifficulty("medium");
+              setDifficulty("Medium");
               setShow((s) => !s);
             }}
           >
@@ -46,7 +48,7 @@ export default function Nav(props) {
           </p>
           <p
             onClick={() => {
-              setDifficulty("hard");
+              setDifficulty("Hard");
               setShow((s) => !s);
             }}
           >
@@ -55,23 +57,23 @@ export default function Nav(props) {
         </div>
       </div>
       <div className="difficulty">
-        <button className="diffbtn" onClick={() => setShow((s) => !s)}>
-          {difficulty}{" "}
+        <button className="diffbtn" onClick={() => setFreeze(false)}>
+          START{" "}
         </button>
       </div>
-      <div className="clock">
+      <div className={difficulty==="Easy"? "clock-Easy":"clock"}>
         <i className="far fa-clock"></i>
         &nbsp;&nbsp;
         <Timer />
       </div>
       <ul className="nav-menu">
-        <li className="nav-menu-item">
-          <i class="fas fa-flag-checkered fa-lg"></i>
+        <li className={difficulty==="Easy"? "nav-menu-item-Easy":"nav-menu-item"}>
+          <i className="fas fa-flag-checkered fa-lg"></i>
           &nbsp;&nbsp;
           <h5>{flagCount}</h5>
         </li>
-        <li className="nav-menu-item">
-          <i className="fas fa-times"></i>
+        <li className={difficulty==="Easy"? "nav-menu-item-Easy":"nav-menu-item"}>
+          <i className="fas fa-times" onClick={() => setFreeze(true)}></i>
         </li>
       </ul>
     </nav>

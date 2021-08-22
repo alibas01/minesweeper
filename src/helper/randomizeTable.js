@@ -2,10 +2,18 @@ export function prepareTable(difficulty) {
   let size = 0;
   let bombCount = 0;
   let bombs = 0;
-  
-  difficulty === 'easy' ? size = 8 : difficulty === 'hard' ? size = 24 : size = 16;
 
-  difficulty === 'easy' ? bombs = 16 : difficulty === 'hard' ? bombs = 120 : bombs = 40;
+  difficulty === "Easy"
+    ? (size = 8)
+    : difficulty === "Hard"
+    ? (size = 24)
+    : (size = 16);
+
+  difficulty === "Easy"
+    ? (bombs = 16)
+    : difficulty === "Hard"
+    ? (bombs = 120)
+    : (bombs = 40);
   // set the empty table
   const table = [];
   for (let i = 0; i < size; i++) {
@@ -46,4 +54,3 @@ export function countBombs(table, row, col) {
   }
   return count;
 }
-

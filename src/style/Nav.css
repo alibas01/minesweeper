@@ -1,16 +1,16 @@
-.nav-easy{
+.nav-Easy{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: #3e8e41;
   height: 50px;
-  width: 450px;
+  width: 300px;
   position: sticky;
   top: 0;
   left: 0;
   margin: 0px 0px 0px 0px;
 }
-.nav-medium{
+.nav-Medium{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -22,13 +22,13 @@
   left: 0;
   margin: 0px 0px 0px 0px;
 }
-.nav-hard{
+.nav-Hard{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: #3e8e41;
   height: 50px;
-  width: 750px;
+  width: 770px;
   position: sticky;
   top: 0;
   left: 0;
@@ -52,6 +52,19 @@
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.nav-menu-item-Easy{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0px;
+  padding-right: 10px;
   color: white;
   font-size: 20px;
   font-weight: bold;
@@ -108,6 +121,14 @@
   margin-right: 130px;
 }
 
+.diffbtn:active {
+  background-color: #3e8e41;
+  color: white;
+  position: relative;
+  left: 3px;
+  top: 3px;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -150,12 +171,22 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  /* margin-left: 30%;
-  margin-top: -11px; */
   color: white;
   font-size: 20px;
   font-weight: bold;
 }
+.clock-Easy{
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: -120px;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 
 @media screen and (max-width: 910px) {
   .nav {
