@@ -1,0 +1,50 @@
+.numbericon {
+  margin-right: 10%;
+  border-style: ridge;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(0, 68, 255);
+  background-color: rgb(177, 150, 31);
+
+} 
+
+.fa-flag {
+  border-style: ridge;
+  width: 30px;
+  height: 30px;
+  color: red;
+  display: table-cell;
+  vertical-align: middle; 
+  text-align: center;
+  text-decoration: none;
+  background-color: mediumseagreen;
+}
+
+.fa-square {
+  border-style: ridge;
+  width: 30px;
+  height: 30px;
+  color: black;
+  display: table-cell;
+  vertical-align: middle; 
+  text-align: center;
+  text-decoration: none;
+  background-color: mediumseagreen;
+}
+
+.fa-bomb {
+  border-style: ridge;
+  width: 30px;
+  height: 30px;
+  color: magenta;
+  display: table-cell;
+  vertical-align: middle; 
+  text-align: center;
+  text-decoration: none;
+  background-color: mediumseagreen;
+}
