@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { countBombs } from "../helper/randomizeTable"
+import { countBombs } from "../helper/randomizeTable";
 import Square from "./Square";
 //import useConditionsData from "../hooks/useConditionsData";
 
@@ -7,26 +7,24 @@ import Square from "./Square";
 import "../style/Row.css";
 
 export default function Table(props) {
+  const { difficulty, table, flagCount, setFlagCount, freeze, setFreeze, rowIndex } =
+    props;
+
   const [view, setView] = useState("hidden");
-  const rowIndex = props.rowIndex;
-  const table = props.table;
 
   const row = table[rowIndex];
 
-  const handleView = (e) => {
-    if (e.type === "click") {
-      setView("visible");
-    } else if (e.type === "contextmenu") {  // right click
-      setView("flag");
-    } else {
-      setView("hidden");
-    }
-  };
-
-
-  const prepareRow = function(r, rowIndex, table) {
-    
-  }
+  // const handleView = (e) => {
+  //   if (e.type === "click") {
+  //     setView("visible");
+  //   } else if (e.type === "contextmenu") {
+  //     // right click
+  //     setView("flag");
+  //     setFlagCount(flagCount + 1);
+  //   } else {
+  //     setView("hidden");
+  //   }
+  // };
 
   return (
     <div className="row">
@@ -34,10 +32,9 @@ export default function Table(props) {
         return (
           <Square
             key={rowIndex + "-" + colIndex}
-            value={0}
-            view="hidden"
-            onClick={handleView}
-            onContextMenu={handleView}
+            value={val}
+            view={view}
+            setView={setView}            
             numberBombs={countBombs(table, rowIndex, colIndex)}
           />
         );

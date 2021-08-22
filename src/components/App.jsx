@@ -41,7 +41,6 @@ function App() {
       />
       <Table
         table={table}
-        setTable={setTable}
         difficulty={difficulty}
         flagCount={flagCount}
         setFlagCount={setFlagCount}
