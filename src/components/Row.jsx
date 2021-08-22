@@ -7,10 +7,14 @@ import Square from "./Square";
 import "../style/Row.css";
 
 export default function Table(props) {
-  const { difficulty, table, flagCount, setFlagCount, freeze, setFreeze, rowIndex } =
-    props;
-
-  
+  const {
+    table,
+    flagCount,
+    setFlagCount,
+    freeze,
+    setFreeze,
+    rowIndex,
+  } = props;
 
   const row = table[rowIndex];
 
@@ -33,9 +37,11 @@ export default function Table(props) {
           <Square
             key={rowIndex + "-" + colIndex}
             value={val}
-            // view={view}
-            // setView={setView}            
             numberBombs={countBombs(table, rowIndex, colIndex)}
+            flagCount={flagCount}
+            setFlagCount={setFlagCount}
+            freeze={freeze}
+            setFreeze={setFreeze}
           />
         );
       })}
