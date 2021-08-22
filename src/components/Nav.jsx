@@ -11,7 +11,7 @@ export default function Nav(props) {
   return (
     <nav className="nav">
       <div className="dropdown" onClick={() => setShow((s) => !s)} >
-        <button className="dropbtn">Dropdown <i className="fas fa-caret-down"></i></button>
+        <button className="dropbtn">Ali <i className="fas fa-caret-down"></i></button>
         <div className="dropdown-content" style={{ display: show ? "block" : "none" }}>
           <a href="#">Easy</a>
           <a href="#">Medium</a>

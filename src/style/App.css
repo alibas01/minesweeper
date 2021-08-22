@@ -1,4 +1,17 @@
-.App {
+.layout {
   text-align: center;
+  border-style: ridge;
+  border-width: 3px;
+  border-color: black;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  width: 830px;
+  height: auto;
+  margin: 30px;
+}
+
+@media screen and (max-width: 910px) {
+  
 }
 

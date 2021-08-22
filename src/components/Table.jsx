@@ -20,7 +20,7 @@ export default function Table(props) {
     <h1>I'm table</h1>
     <Square 
     view="openNumber"
-    numberB="3"
+    numberB="4"
     />
     <Square 
     view="flag"

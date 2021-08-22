@@ -92,3 +92,9 @@
 .dropdown-content a:hover {background-color: #ddd;}
 
 .fa-caret-down:active {color: #3e8e41;}
+
+@media screen and (max-width: 910px) {
+  .nav {
+    width: 500px;
+  }
+}
