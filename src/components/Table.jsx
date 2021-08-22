@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Row from "./Row";
-import useConditionsData from "../hooks/useConditionsData";
+
 
 // STYLESHEETS
 // import "./table.css";

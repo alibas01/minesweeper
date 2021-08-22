@@ -5,6 +5,7 @@ export default function useConditionsData() {
   
   const [difficulty, setDifficulty] = useState("easy");
   const [show, setShow] = useState(false);
+  const [flagCount, setFlagCount] = useState(0);
   const [table, setTable] = useState([
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
@@ -21,5 +22,5 @@ export default function useConditionsData() {
   }, []);
   
 
-  return { difficulty, setDifficulty, table, setTable, show, setShow };
+  return { difficulty, setDifficulty, table, setTable, show, setShow, flagCount, setFlagCount };
 }
