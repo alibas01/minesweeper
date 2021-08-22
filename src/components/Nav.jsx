@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Timer from "./Timer";
+import useConditionsData from "../hooks/useConditionsData";
 
 // STYLESHEETS
 import "../style/Nav.css";
@@ -7,15 +8,16 @@ import "../style/Nav.css";
 
 export default function Nav(props) {
   const [show, setShow] = useState(false);
+  const [ difficulty, setDifficulty ] = useState("easy");
 
   return (
     <nav className="nav">
       <div className="dropdown" onClick={() => setShow((s) => !s)} >
-        <button className="dropbtn">Ali <i className="fas fa-caret-down"></i></button>
+        <button className="dropbtn">Difficulty:{difficulty} <i className="fas fa-caret-down"></i></button>
         <div className="dropdown-content" style={{ display: show ? "block" : "none" }}>
-          <a href="#">Easy</a>
-          <a href="#">Medium</a>
-          <a href="#">Hard</a>
+          <p onClick={setDifficulty("easy")}>Easy</p>
+          <p onClick={setDifficulty("medium")}>Medium</p>
+          <p onClick={setDifficulty("hard")}>Hard</p>
         </div>
       </div>
         <ul className="nav-menu">
