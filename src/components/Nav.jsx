@@ -27,7 +27,7 @@ export default function Nav(props) {
             </div>
           </li>
           <li className="nav-menu-item">
-            <i className="fas fa-flag"></i>
+          <i class="fas fa-flag-checkered fa-lg"></i>
             &nbsp;&nbsp;
             <h6>number</h6>
           </li>

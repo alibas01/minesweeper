@@ -18,6 +18,19 @@ export default function Table(props) {
   return (
     <div>
     <h1>I'm table</h1>
+    <Square 
+    view="openNumber"
+    numberB="3"
+    />
+    <Square 
+    view="flag"
+    />
+    <Square 
+    view="openBomb"
+    />
+    <Square 
+    view="openEmpty"
+    />
     <Square />
     </div>
   );
