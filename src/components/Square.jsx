@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 // STYLESHEETS
 // import "./table.css";
 import "../style/Square.css";
 
 export default function Square(props) {
-  const view = props.view;
-  const setView = props.setView;
+  const [view, setView] = useState("hidden");
+
   const numberBombs = props.numberBombs;
   const value = props.value;
-  // const onClick = props.onClick;
-  // const onContextMenu = props.onContextMenu;
+
 
   const squareMode = function () {
     if (view === "flag") {
@@ -31,7 +30,7 @@ export default function Square(props) {
           <p>{`${numberBombs}`}</p>
         </div>
       );
-    } else {
+    } else if (view === "visible" && !value && numberBombs === 0) {
       return <i className="fas fa-square fa-2x"></i>;
     }
   };

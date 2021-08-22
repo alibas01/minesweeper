@@ -10,7 +10,7 @@ export default function Table(props) {
   const { difficulty, table, flagCount, setFlagCount, freeze, setFreeze, rowIndex } =
     props;
 
-  const [view, setView] = useState("hidden");
+  
 
   const row = table[rowIndex];
 
@@ -33,8 +33,8 @@ export default function Table(props) {
           <Square
             key={rowIndex + "-" + colIndex}
             value={val}
-            view={view}
-            setView={setView}            
+            // view={view}
+            // setView={setView}            
             numberBombs={countBombs(table, rowIndex, colIndex)}
           />
         );
