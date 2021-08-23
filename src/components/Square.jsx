@@ -63,6 +63,16 @@ export default function Square(props) {
             <p>{`${numberBombs}`}</p>
           </div>
         );
+        } else if (view === "visible" && value) {
+          return <i className="fas fa-bomb fa-lg" />;
+        } else if (view === "visible" && !value && numberBombs !== 0) {
+          return (
+            <div className="numbericon">
+              <p>{`${numberBombs}`}</p>
+            </div>
+          );
+        } else if (view === "visible" && !value && numberBombs === 0) {
+          return <i className="fas fa-square fa-2x"></i>;
         }
       }
   };

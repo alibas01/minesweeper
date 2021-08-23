@@ -73,6 +73,7 @@ export default function Nav(props) {
           className="diffbtn"
           onClick={() => {
             setFreeze(false);
+            setEnd(false);
             setStart(start + 1);
           }}
         >
