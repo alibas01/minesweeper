@@ -34,12 +34,14 @@
 
 ## Snapshots
 
+<div>
 <p align="left">
   <img width="150" height="auto" src="https://raw.githubusercontent.com/alibas01/minesweeper/master/assets/gameover.png">
 </p>
 <p align="right">
   <img width="150" height="auto" src="https://raw.githubusercontent.com/alibas01/minesweeper/master/assets/win.png">
 </p>
+</div>
 <p align="center">
   <img width="250" height="auto" src="https://raw.githubusercontent.com/alibas01/minesweeper/master/assets/reveal.png">
 </p>
