@@ -6,6 +6,8 @@ export default function useConditionsData() {
   const [show, setShow] = useState(false);
   const [flagCount, setFlagCount] = useState(0);
   const [freeze, setFreeze] = useState(false);
+  const [start, setStart] = useState(0);
+  const [end, setEnd] = useState(false);
   const [table, setTable] = useState([
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
@@ -20,7 +22,7 @@ export default function useConditionsData() {
   useEffect(() => {
     setTable(prepareTable(difficulty));
     //when play clicks, the table is reset
-  }, []);
+  }, [start]);
 
   return {
     difficulty,
@@ -33,5 +35,9 @@ export default function useConditionsData() {
     setFlagCount,
     freeze,
     setFreeze,
+    start,
+    setStart,
+    end,
+    setEnd,
   };
 }

@@ -16,6 +16,10 @@ function App() {
     setFlagCount,
     freeze,
     setFreeze,
+    start,
+    setStart,
+    end,
+    setEnd,
   } = useConditionsData();
 
   const adjustClass = function(difficulty) {
@@ -39,6 +43,10 @@ function App() {
         flagCount={flagCount}
         freeze={freeze}
         setFreeze={setFreeze}
+        start={start}
+        setStart={setStart}
+        setEnd={setEnd}
+        end={end}
       />
       <Table
         table={table}
@@ -47,6 +55,7 @@ function App() {
         setFlagCount={setFlagCount}
         freeze={freeze}
         setFreeze={setFreeze}
+        end={end}
       />
     </div>
   );

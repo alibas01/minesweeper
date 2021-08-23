@@ -13,6 +13,7 @@ export default function Square(props) {
   const setFlagCount = props.setFlagCount;
   const freeze = props.freeze;
   const setFreeze = props.setFreeze;
+  const end = props.end;
 
   const squareMode = function () {
     if (view === "flag") {
@@ -50,9 +51,26 @@ export default function Square(props) {
     }
   };
 
+  const endedMode = function () {
+    if (end) {
+      if ((view === "hidden" || view === "flag") && value) 
+        return <i className="fas fa-bomb fa-lg" />;
+      else if ((view === "hidden" || view === "flag") && numberBombs === 0 ) 
+        return <i className="fas fa-square fa-2x"></i>;
+      else if ((view === "hidden" || view === "flag") && numberBombs !== 0 ) {
+        return( 
+            <div className="numbericon">
+            <p>{`${numberBombs}`}</p>
+          </div>
+        );
+        }
+      }
+  };
+
+
   return (
     <div>
-    {squareMode()}
+    {end ? endedMode() : squareMode()}
     </div>
   );
 }

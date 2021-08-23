@@ -6,7 +6,7 @@ import Row from "./Row";
 import "../style/Table.css";
 
 export default function Table(props) {
-  const { difficulty, table, flagCount, setFlagCount, freeze, setFreeze } =
+  const { difficulty, table, flagCount, setFlagCount, freeze, setFreeze, end } =
     props;
 
   // const prepareT = table.map((row, rowIndex) => {
@@ -32,12 +32,14 @@ export default function Table(props) {
               setFreeze={setFreeze}
               flagCount={flagCount}
               setFlagCount={setFlagCount}
+              end={end}
             />
           );
         })}
       </div>
      {freeze && <div className="game-over">GAME OVER!</div> }
      { (difficulty==="Easy" && flagCount===10) || (difficulty==="Medium" && flagCount===40) || (difficulty==="Easy" && flagCount===120) ? <div className="game-over">YOU WIN!</div> : null}
+     {end && <div className="game-over">GAME ENDED!</div> }
     </div>
   );
 }

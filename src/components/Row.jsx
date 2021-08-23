@@ -14,6 +14,7 @@ export default function Table(props) {
     freeze,
     setFreeze,
     rowIndex,
+    end
   } = props;
 
   const row = table[rowIndex];
@@ -42,6 +43,7 @@ export default function Table(props) {
             setFlagCount={setFlagCount}
             freeze={freeze}
             setFreeze={setFreeze}
+            end={end}
           />
         );
       })}
