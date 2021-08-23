@@ -34,9 +34,12 @@
 
 ## Snapshots
 
-<p align="center">
-  <img width="460" height="300" src="https://github.com/alibas01/scheduler/blob/master/docs/rootview.png">
+<p align="left">
+  <img width="150" height="auto" src="https://raw.githubusercontent.com/alibas01/minesweeper/master/assets/gameover.png">
+</p>
+<p align="right">
+  <img width="150" height="auto" src="https://raw.githubusercontent.com/alibas01/minesweeper/master/assets/win.png">
 </p>
 <p align="center">
-  <img width="460" height="300" src="https://github.com/alibas01/scheduler/blob/master/docs/add-interview-form.png">
+  <img width="250" height="auto" src="https://raw.githubusercontent.com/alibas01/minesweeper/master/assets/reveal.png">
 </p>
