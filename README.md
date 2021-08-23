@@ -1,7 +1,7 @@
 # MineSweeperr by [@alibas01](Ali Bas)
 
 <p align="center">
-  <img width="230" height="150" src="https://raw.githubusercontent.com/alibas01/minesweeper/master/public/mine.png">
+  <img style="opacity:0.8;" width="100" height="auto" src="https://raw.githubusercontent.com/alibas01/minesweeper/master/public/mine.png">
 </p>
 
 
@@ -34,14 +34,14 @@
 
 ## Snapshots
 
-<div>
-<p align="left">
+
+<p align="center">
   <img width="150" height="auto" src="https://raw.githubusercontent.com/alibas01/minesweeper/master/assets/gameover.png">
 </p>
-<p align="right">
+<p align="center">
   <img width="150" height="auto" src="https://raw.githubusercontent.com/alibas01/minesweeper/master/assets/win.png">
 </p>
-</div>
+
 <p align="center">
   <img width="250" height="auto" src="https://raw.githubusercontent.com/alibas01/minesweeper/master/assets/reveal.png">
 </p>
