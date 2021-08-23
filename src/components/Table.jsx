@@ -20,21 +20,24 @@ export default function Table(props) {
   //     });
 
   return (
-    <div className="table">
-      {table.map((row, rowIndex) => {
-        return (
-          <Row
-            key={rowIndex}
-            table={table}
-            rowIndex={rowIndex}
-            freeze={freeze}
-            setFreeze={setFreeze}
-            difficulty={difficulty}
-            flagCount={flagCount}
-            setFlagCount={setFlagCount}
-          />
-        );
-      })}
+    <div>
+      <div className="table">
+        {table.map((row, rowIndex) => {
+          return (
+            <Row
+              key={rowIndex}
+              table={table}
+              rowIndex={rowIndex}
+              freeze={freeze}
+              setFreeze={setFreeze}
+              flagCount={flagCount}
+              setFlagCount={setFlagCount}
+            />
+          );
+        })}
+      </div>
+     {freeze && <div className="game-over">GAME OVER!</div> }
+     { (difficulty==="Easy" && flagCount===10) || (difficulty==="Medium" && flagCount===40) || (difficulty==="Easy" && flagCount===120) ? <div className="game-over">YOU WIN!</div> : null}
     </div>
   );
 }

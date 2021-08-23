@@ -19,10 +19,10 @@ export default function Square(props) {
       return (
         <i
           className="fas fa-flag fa-lg"
-          onClick={() => setView("visible")}
+          onClick={() => !freeze && setView("visible")}
           onContextMenu={() => {
-            setView("hidden");
-            setFlagCount(flagCount - 1);
+            !freeze && setView("hidden");
+            !freeze && setFlagCount(flagCount - 1);
           }}
         ></i>
       );
@@ -30,15 +30,15 @@ export default function Square(props) {
       return (
         <i
           className="far fa-square fa-2x"
-          onClick={() => setView("visible")}
+          onClick={() => !freeze && setView("visible")}
           onContextMenu={() => {
-            setView("flag");
-            setFlagCount(flagCount + 1);
+            !freeze && setView("flag");
+            !freeze && setFlagCount(flagCount + 1);
           }}
         ></i>
       );
     } else if (view === "visible" && value) {
-      return <i className="fas fa-bomb fa-lg"></i>; //game over
+      return <i className="fas fa-bomb fa-lg" onChange={setFreeze(true)} ></i>; //game over
     } else if (view === "visible" && !value && numberBombs !== 0) {
       return (
         <div className="numbericon">
@@ -50,5 +50,9 @@ export default function Square(props) {
     }
   };
 
-  return <div>{squareMode()}</div>;
+  return (
+    <div>
+    {squareMode()}
+    </div>
+  );
 }

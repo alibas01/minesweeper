@@ -10,7 +10,7 @@ export function prepareTable(difficulty) {
     : (size = 16);
 
   difficulty === "Easy"
-    ? (bombs = 16)
+    ? (bombs = 10)
     : difficulty === "Hard"
     ? (bombs = 120)
     : (bombs = 40);

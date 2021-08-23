@@ -7,3 +7,10 @@
   margin: 0;
   padding: 0;
 }
+
+.game-over {
+  color: brown;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+}
