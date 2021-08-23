@@ -5,7 +5,7 @@ import Timer from "./Timer";
 import "../style/Nav.css";
 
 export default function Nav(props) {
-  const { show, setShow, difficulty, setDifficulty, flagCount, setFreeze } =
+  const { show, setShow, difficulty, setDifficulty, flagCount, freeze, setFreeze } =
     props;
 
     //console.log(props);
@@ -64,7 +64,9 @@ export default function Nav(props) {
       <div className={difficulty==="Easy"? "clock-Easy":"clock"}>
         <i className="far fa-clock"></i>
         &nbsp;&nbsp;
-        <Timer />
+        <Timer 
+        freeze={freeze}
+        />
       </div>
       <ul className="nav-menu">
         <li className={difficulty==="Easy"? "nav-menu-item-Easy":"nav-menu-item"}>

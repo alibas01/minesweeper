@@ -37,6 +37,7 @@ function App() {
         show={show}
         setShow={setShow}
         flagCount={flagCount}
+        freeze={freeze}
         setFreeze={setFreeze}
       />
       <Table
