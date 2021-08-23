@@ -23,11 +23,7 @@
 
 ## Dependencies
 - React.js
-- React-Router.js
-- React-Bootstrap.js
-- React-Router-Bootstrap.js
-- React-Router-Dom.js
-- React-Router-Config.js
+
 
 ## Credits
 - [@alibas01](Ali Bas)
