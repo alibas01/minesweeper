@@ -4,7 +4,7 @@ import { prepareTable } from "../helper/randomizeTable";
 export default function useConditionsData() {
   const [difficulty, setDifficulty] = useState("Easy");
   const [show, setShow] = useState(false);
-  const [flagCount, setFlagCount] = useState(0);
+  const [flagCount, setFlagCount] = useState(10);
   const [freeze, setFreeze] = useState(false);
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(false);
@@ -18,6 +18,7 @@ export default function useConditionsData() {
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
   ]);
+
 
   useEffect(() => {
     setTable(prepareTable(difficulty));

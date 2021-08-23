@@ -38,7 +38,7 @@ export default function Table(props) {
         })}
       </div>
      {freeze && <div className="game-over">GAME OVER!</div> }
-     { (difficulty==="Easy" && flagCount===10) || (difficulty==="Medium" && flagCount===40) || (difficulty==="Easy" && flagCount===120) ? <div className="game-over">YOU WIN!</div> : null}
+     { flagCount===0 ? <div className="game-over">YOU WIN!</div> : null}
      {end && <div className="game-over">GAME ENDED!</div> }
     </div>
   );

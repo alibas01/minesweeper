@@ -23,7 +23,7 @@ export default function Square(props) {
           onClick={() => !freeze && setView("visible")}
           onContextMenu={() => {
             !freeze && setView("hidden");
-            !freeze && setFlagCount(flagCount - 1);
+            !freeze && setFlagCount(flagCount + 1);
           }}
         ></i>
       );
@@ -34,7 +34,7 @@ export default function Square(props) {
           onClick={() => !freeze && setView("visible")}
           onContextMenu={() => {
             !freeze && setView("flag");
-            !freeze && setFlagCount(flagCount + 1);
+            !freeze && setFlagCount(flagCount - 1);
           }}
         ></i>
       );

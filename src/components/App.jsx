@@ -41,6 +41,7 @@ function App() {
         show={show}
         setShow={setShow}
         flagCount={flagCount}
+        setFlagCount={setFlagCount}
         freeze={freeze}
         setFreeze={setFreeze}
         start={start}

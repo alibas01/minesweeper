@@ -11,6 +11,7 @@ export default function Nav(props) {
     difficulty,
     setDifficulty,
     flagCount,
+    setFlagCount,
     freeze,
     setFreeze,
     start,
@@ -45,6 +46,7 @@ export default function Nav(props) {
           <p
             onClick={() => {
               setDifficulty("Easy");
+              setFlagCount(10);
               setShow((s) => !s);
             }}
           >
@@ -53,6 +55,7 @@ export default function Nav(props) {
           <p
             onClick={() => {
               setDifficulty("Medium");
+              setFlagCount(40);
               setShow((s) => !s);
             }}
           >
@@ -61,6 +64,7 @@ export default function Nav(props) {
           <p
             onClick={() => {
               setDifficulty("Hard");
+              setFlagCount(120);
               setShow((s) => !s);
             }}
           >
