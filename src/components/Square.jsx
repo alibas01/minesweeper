@@ -11,9 +11,18 @@ export default function Square(props) {
   const value = props.value;
   const flagCount = props.flagCount;
   const setFlagCount = props.setFlagCount;
+  const trueFlagCount = props.trueFlagCount;
+  const setTrueFlagCount = props.setTrueFlagCount;
   const freeze = props.freeze;
   const setFreeze = props.setFreeze;
   const end = props.end;
+
+  // const hide = function() {
+  //   setTimeout(() => {
+  //     setView("hidden");
+  //   }, 5000);
+  // }
+    
 
   const squareMode = function () {
     if (view === "flag") {
@@ -24,6 +33,7 @@ export default function Square(props) {
           onContextMenu={() => {
             !freeze && setView("hidden");
             !freeze && setFlagCount(flagCount + 1);
+            value && setTrueFlagCount(trueFlagCount - 1);
           }}
         ></i>
       );
@@ -35,6 +45,7 @@ export default function Square(props) {
           onContextMenu={() => {
             !freeze && setView("flag");
             !freeze && setFlagCount(flagCount - 1);
+            value && setTrueFlagCount(trueFlagCount + 1);
           }}
         ></i>
       );
@@ -56,10 +67,10 @@ export default function Square(props) {
       if ((view === "hidden" || view === "flag") && value) 
         return <i className="fas fa-bomb fa-lg" />;
       else if ((view === "hidden" || view === "flag") && numberBombs === 0 ) 
-        return <i className="fas fa-square fa-2x"></i>;
+        return <i className="fas fa-square fa-2x" ></i>;
       else if ((view === "hidden" || view === "flag") && numberBombs !== 0 ) {
         return( 
-            <div className="numbericon">
+            <div className="numbericon" >
             <p>{`${numberBombs}`}</p>
           </div>
         );
@@ -67,12 +78,12 @@ export default function Square(props) {
           return <i className="fas fa-bomb fa-lg" />;
         } else if (view === "visible" && !value && numberBombs !== 0) {
           return (
-            <div className="numbericon">
+            <div className="numbericon" >
               <p>{`${numberBombs}`}</p>
             </div>
           );
         } else if (view === "visible" && !value && numberBombs === 0) {
-          return <i className="fas fa-square fa-2x"></i>;
+          return <i className="fas fa-square fa-2x" ></i>;
         }
       }
   };

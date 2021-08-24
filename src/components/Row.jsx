@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { countBombs } from "../helper/randomizeTable";
 import Square from "./Square";
 //import useConditionsData from "../hooks/useConditionsData";
@@ -11,6 +11,8 @@ export default function Table(props) {
     table,
     flagCount,
     setFlagCount,
+    trueFlagCount,
+    setTrueFlagCount,
     freeze,
     setFreeze,
     rowIndex,
@@ -41,6 +43,8 @@ export default function Table(props) {
             numberBombs={countBombs(table, rowIndex, colIndex)}
             flagCount={flagCount}
             setFlagCount={setFlagCount}
+            trueFlagCount={trueFlagCount}
+            setTrueFlagCount={setTrueFlagCount}
             freeze={freeze}
             setFreeze={setFreeze}
             end={end}

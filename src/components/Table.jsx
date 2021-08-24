@@ -1,23 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Row from "./Row";
 
 // STYLESHEETS
-// import "./table.css";
 import "../style/Table.css";
 
 export default function Table(props) {
-  const { difficulty, table, flagCount, setFlagCount, freeze, setFreeze, end } =
+  const { difficulty, table, flagCount, setFlagCount, trueFlagCount, setTrueFlagCount, freeze, setFreeze, end } =
     props;
 
-  // const prepareT = table.map((row, rowIndex) => {
-  //       return (
-  //         <Row
-  //           key={rowIndex}
-  //           table={table}
-  //           rowIndex={rowIndex}
-  //         />
-  //       );
-  //     });
+  const trueFlags = function(difficulty, count) {
+    console.log(count);
+    if (difficulty === "easy" && count === 10) return true;
+    if (difficulty === "medium" && count === 40) return true;
+    if (difficulty === "hard" && count === 120) return true;
+    return false;
+  }
 
   return (
     <div>
@@ -32,13 +29,15 @@ export default function Table(props) {
               setFreeze={setFreeze}
               flagCount={flagCount}
               setFlagCount={setFlagCount}
+              trueFlagCount={trueFlagCount}
+              setTrueFlagCount={setTrueFlagCount}
               end={end}
             />
           );
         })}
       </div>
      {freeze && <div className="game-over">GAME OVER!</div> }
-     { flagCount===0 ? <div className="game-over">YOU WIN!</div> : null}
+     {flagCount===0 && trueFlags(difficulty, trueFlagCount) ? <div className="game-over">YOU WIN!</div> : null}
      {end && <div className="game-over">GAME ENDED!</div> }
     </div>
   );

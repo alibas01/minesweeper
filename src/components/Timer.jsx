@@ -18,7 +18,7 @@ const Timer = (props) => {
           return ()=> {
               clearInterval(myInterval);
             };
-      }, [freeze]);
+      }, [freeze, end]);
 
     return (
         <div>
