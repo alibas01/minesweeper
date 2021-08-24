@@ -8,13 +8,6 @@ export default function Table(props) {
   const { difficulty, table, flagCount, setFlagCount, trueFlagCount, setTrueFlagCount, freeze, setFreeze, end } =
     props;
 
-  const trueFlags = function(difficulty, count) {
-    console.log(count);
-    if (difficulty === "easy" && count === 10) return true;
-    if (difficulty === "medium" && count === 40) return true;
-    if (difficulty === "hard" && count === 120) return true;
-    return false;
-  }
 
   return (
     <div>
@@ -37,7 +30,7 @@ export default function Table(props) {
         })}
       </div>
      {freeze && <div className="game-over">GAME OVER!</div> }
-     {flagCount===0 && trueFlags(difficulty, trueFlagCount) ? <div className="game-over">YOU WIN!</div> : null}
+     {(difficulty === "Easy" && trueFlagCount === 10) || (difficulty === "Medium" && trueFlagCount === 40) || (difficulty === "Hard" && trueFlagCount === 120) ? <div className="game-over">YOU WIN!</div> : null}
      {end && <div className="game-over">GAME ENDED!</div> }
     </div>
   );
